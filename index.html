@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navexis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+<body class="dark-mode">
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" title="Switch to light mode">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="navexis_transparent_logo.png" alt="Navexis Logo" class="navexis-logo" id="navexis-logo" />
+  </div>
+
+  <!-- Search Section -->
+  <div class="main-container">
+    <form action="#" class="search-form">
+      <input type="text" class="search-box" placeholder="Search..." />
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+  </div>
+
+  <!-- JavaScript for Theme + Logo Toggle -->
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const logo = document.getElementById('navexis-logo');
+
+    toggleButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+
+      // Update logo image
+      logo.src = isDark ? 'navexis_transparent_logo.png' : 'navexis_icon.png';
+
+      // Update toggle text/icon
+      toggleButton.innerHTML = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      toggleButton.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    });
+  </script>
+</body>
+</html>
